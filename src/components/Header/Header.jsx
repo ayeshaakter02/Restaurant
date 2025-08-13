@@ -1,27 +1,9 @@
-// import React from 'react'
-// import './Header.css'
-
-// const Header = () => {
-//   return (
-//     <div className='header'>
-//         <div className="header-contents">
-//             <h2>Order your favorite food here</h2>
-//             <p>Choose from a diverse menu featuring a delactable array of dishes crafted with the finest ingredients and satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
-//             <a href="#explore-menu"><button className='buttonwl'>View Menu</button></a>
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default Header
-
 import React, { useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import "./homePage.css";
 import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
-    // const [menu, setMenu] = useState("home");
       const navigate = useNavigate();
   return (
     <div className="home">
