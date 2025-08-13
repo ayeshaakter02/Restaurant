@@ -6,7 +6,6 @@ const BookingPage = () => {
     <Box className='BookingPage'>
       <Typography className='first-title' variant='h6'>Table Booking</Typography>
       <Typography  className='second-title' variant='h4'>A Culinary Journey Awaits!</Typography>
-      {/* Table Form */}
       <TableCard/>
     </Box>
   )

@@ -7,12 +7,11 @@ import TablePage from "./pages/TablePage.jsx";
 import TableDetail from "./pages/TableDetail.jsx";
 import Cart from "./components/Carts/Cart.jsx";
 import MyOrders from "./components/MyOrders/MyOrders.jsx";
-import ConfrimOrder from "./components/ConfrimOrder/ConfrimOrder.jsx";
 import Logout from "./Validate/Logout.jsx";
 import Login from "./Validate/Login.jsx";
-import Home from "./components/Home/Home.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder.jsx";
+import HomePage from "./pages/HomePage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,11 +20,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home/>,
+        element: <HomePage/>,
       },
       {
         path: "/home",
-        element: <Home/>,
+        element: <HomePage/>,
       },
       {
         path: "/login",
@@ -66,10 +65,6 @@ const router = createBrowserRouter([
       {
         path: "/myorders",
         element: <MyOrders/>,
-      },
-      {
-        path: "/confrim",
-        element: <ConfrimOrder/>,
       },
     ],
   },

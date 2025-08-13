@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./MyOrders.css";
-import ConfrimOrder from "../../components/ConfrimOrder/ConfrimOrder";
 import { Typography } from "@mui/material";
+import { StoreContext } from "../../context/StoreContext";
 
 const MyOrders = () => {
+  const { cartItems, food_list, getTotalCartAmount, url } =
+    useContext(StoreContext);
   return (
     <div className="my-orders">
       <Typography
@@ -13,13 +15,55 @@ const MyOrders = () => {
           flexGrow: 1,
           color: "#e52b34",
           fontSize: "40px",
+          margin: "70px",
           fontFamily: "Dancing Script",
           fontWeight: 800,
         }}
       >
         My Orders
       </Typography>
-      <ConfrimOrder />
+      <div className="order">
+        <div className="order-items">
+          <div className="order-items-title">
+            <p>Items</p>
+            <p>Title</p>
+            <p>Price</p>
+            <p>Quantity</p>
+            <p>Total</p>
+          </div>
+          <br />
+          <hr />
+          {food_list.map((item, index) => {
+            if (cartItems[item._id] > 0) {
+              return (
+                <div>
+                  <div className="order-items-title cart-items-item">
+                    <img src={item.image} alt="" />
+                    <p>{item.name}</p>
+                    <p>${item.price}</p>
+                    <p>{cartItems[item._id]}</p>
+                    <p>${item.price * cartItems[item._id]}</p>
+                  </div>
+                  <hr />
+                </div>
+              );
+            }
+          })}
+        </div>
+        <div className="order-bottom">
+          <div className="order-total">
+            <h2>Cash on Delivery</h2>
+            <div>
+              <div className="order-total-details">
+                <b>Your Total Bill</b>
+                <b>
+                  ${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}
+                </b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

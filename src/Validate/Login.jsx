@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import {ArrowForward } from '@mui/icons-material'
 import {useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify'
-import {Authenticate} from './AuthContext'
 import { AuthContext } from '../context/AuthContext'
 const style = {
   position: "absolute",
@@ -27,7 +26,6 @@ const [open, setOpen] = React.useState(false);
   const navigate=useNavigate()
   const {register,handleSubmit,formState:{errors}}=useForm()
   //auth function
-  // const { setAuth } = useContext(Authenticate);
   const { setAuth } = useContext(AuthContext);
 
 

@@ -18,9 +18,7 @@ const App = () => {
         draggable={false}
         pauseOnHover={false}
       />
-      {/* auth config  */}
       <AuthContext>
-        {/* page layout  */}
         <Layout />
       </AuthContext>
     </QueryClientProvider>

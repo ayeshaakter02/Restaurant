@@ -5,7 +5,6 @@ import { AuthContext } from "../context/AuthContext";
 
 const Logout = () => {
   //auth function and page navigate to home page
-  // const { setAuth } = useContext(Authenticate);
   const { setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
   useEffect(() => {

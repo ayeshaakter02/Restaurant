@@ -3,7 +3,6 @@ import { createContext } from "react";
 
 //authcontext init
 export const Authenticate = createContext();
-// export const AuthContext = createContext(null);
 
 const AuthContext = ({ children }) => {
   //auth data default false
