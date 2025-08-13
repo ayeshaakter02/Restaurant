@@ -12,6 +12,7 @@ import Login from "./Validate/Login.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import Discount from "./components/Discount/Discount.jsx";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/myorders",
         element: <MyOrders/>,
+      },
+      {
+        path: "/discount",
+        element: <Discount/>,
       },
     ],
   },
