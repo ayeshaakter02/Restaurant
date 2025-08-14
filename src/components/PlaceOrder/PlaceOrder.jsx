@@ -129,17 +129,17 @@ const PlaceOrder = () => {
             <div>
               <div className="cart-total-details">
                 <p>Subtotal</p>
-                <p>${getTotalCartAmount()}</p>
+                <p>{getTotalCartAmount()} tk</p>
               </div>
               <hr />
               <div className="cart-total-details">
                 <p>Delivery Fee</p>
-                <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
+                <p>{getTotalCartAmount() === 0 ? 0 : 60} tk</p>
               </div>
               <hr />
               <div className="cart-total-details">
                 <b>Total</b>
-                <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
+                <b>{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 60} tk</b>
               </div>
             </div>
             <Link className="link" to={"/MyOrders"}>

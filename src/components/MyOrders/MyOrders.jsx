@@ -40,9 +40,9 @@ const MyOrders = () => {
                   <div className="order-items-title cart-items-item">
                     <img src={item.image} alt="" />
                     <p>{item.name}</p>
-                    <p>${item.price}</p>
+                    <p>{item.price} tk</p>
                     <p>{cartItems[item._id]}</p>
-                    <p>${item.price * cartItems[item._id]}</p>
+                    <p>{item.price * cartItems[item._id]} tk</p>
                   </div>
                   <hr />
                 </div>
@@ -57,7 +57,7 @@ const MyOrders = () => {
               <div className="order-total-details">
                 <b>Your Total Bill</b>
                 <b>
-                  ${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}
+                  {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 60} tk
                 </b>
               </div>
             </div>

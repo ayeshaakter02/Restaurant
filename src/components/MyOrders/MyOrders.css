@@ -3,38 +3,7 @@
     flex-direction: column;
     gap: 20px;
 }
-.my-orders-order{
-    display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 1fr;
-    align-items: center;
-    gap: 30px;
-    font-size: 14px;
-    padding: 10px 20px;
-    color: #454545;
-    border: 1px solid tomato;
-}
-.my-orders-order img{
-    width: 50px;
-}
-.my-orders-order p span{
-    color: tomato;
-}
-.my-orders-order p b{
-    font-weight: 500;
-    color: #454545;
-}
-.my-orders-order button{
-    border: 1px solid #454545;
-    padding: 12px 0px;
-    border-radius: 4px;
-    background-color: #ffe1e1;
-    cursor: pointer;
-    color: #454545
-}
 
-.order{
-    margin-top: 80px;
-}
 .order-items-title{
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
@@ -42,26 +11,15 @@
     color: grey;
     font-size: max(1vw, 12px);
 }
-.order-items-item{
-    margin: 10px 0px;
-    color: black;
-}
-.order-items-item img{
-    width: 50px;
-}
+
 .order hr{
     height: 1px;
     background-color: #e2e2e2;
     border: none;
 }
-.order-items-item .cross{
-    cursor: pointer;
-}
+
 .order-bottom{
     margin-top: 80px;
-    display: flex;
-    justify-content: space-between;
-    gap: max(12vw, 20px);
 }
 .order-total{
     flex: 1;
@@ -77,24 +35,12 @@
 .order-total hr{
     margin: 10px 0px;
 }
-.order-total button{
-    border: none;
-    color: white;
-    background-color: tomato;
-    width: max(15vw,200px);
-    padding: 12px 0px;
-    border-radius: 4px;
-    cursor: pointer;
-}
 
 @media (max-width:900px) {
     .my-orders-order{
         grid-template-columns: 1fr 2fr 1fr;
         row-gap: 5px;
         font-size: 12px;
-    }
-    .my-orders-order button{
-        font-size: 10px;
     }
 }
 

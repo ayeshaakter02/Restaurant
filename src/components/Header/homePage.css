@@ -43,7 +43,12 @@
     color: white;
     text-decoration: none;
 }
-
+.home .content .offer:hover ,a:hover {
+    color: #e52b34;
+}
+.home .content a:hover {
+    color: #e52b34;
+}
 #About {
     padding: 50px;
     height: 600px;

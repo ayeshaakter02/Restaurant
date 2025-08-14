@@ -22,7 +22,7 @@ const Header = () => {
             Book Table Now
           </Button>
         </Link>
-        <Link to="/discount">View Offers</Link>
+        <Link className="offer" to="/discount">View Offers</Link>
         <a href="#explore-menu" className="menu">
           View Menu
         </a>
