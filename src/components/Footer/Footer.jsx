@@ -23,15 +23,6 @@ const Footer = () => {
             Restaurant.
           </Typography>
         </div>
-        {/* <div className="footer-content-center">
-          <h2>COMPANY</h2>
-          <ul>
-            <li>Home</li>
-            <li>About us</li>
-            <li>Delivery</li>
-            <li>Privacy Policy</li>
-          </ul>
-        </div> */}
         <div className="footer-content-right">
           <h3>Contact us</h3>
           <ul>

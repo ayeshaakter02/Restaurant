@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals.js";
 import StoreContextProvider from "./context/StoreContext.jsx";
 import AuthProvider from "./context/AuthProvider.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const queryClient = new QueryClient();
 

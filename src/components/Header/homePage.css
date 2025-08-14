@@ -38,8 +38,10 @@
     margin-top: 50px;
 }
 
-.home .content .menu {
+.home .content a {
     margin-top: 20px;
+    color: white;
+    text-decoration: none;
 }
 
 #About {
