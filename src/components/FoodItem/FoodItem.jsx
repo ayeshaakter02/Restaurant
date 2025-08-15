@@ -3,7 +3,7 @@ import "./FoodItem.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 
-function FoodItem({ id, name, price, description, image , discount }) {
+function FoodItem({ id, name, price, description, image, discount }) {
   const { cartItems, addToCart, removeFromCart, url } =
     useContext(StoreContext);
 
@@ -11,15 +11,28 @@ function FoodItem({ id, name, price, description, image , discount }) {
     <div className="food-item">
       <div className="food-item-img-container">
         <img className="food-item-image" src={image} alt="" />
-        {!cartItems[id]
-                ?<img className='add' onClick={()=>addToCart(id)} src={assets.add_icon_white} alt="" />
-                :<div className='food-item-counter'>
-                  <img onClick={()=>removeFromCart(id)} src={assets.remove_icon_red} alt='' />
-                  <p className='cartitemsp'>{cartItems[id]}</p>
-                  <img onClick={()=>addToCart(id)} src={assets.add_icon_green} alt='' />
-                  </div>
-            }
-
+        {!cartItems[id] ? (
+          <img
+            className="add"
+            onClick={() => addToCart(id)}
+            src={assets.add_icon_white}
+            alt=""
+          />
+        ) : (
+          <div className="food-item-counter">
+            <img
+              onClick={() => removeFromCart(id)}
+              src={assets.remove_icon_red}
+              alt=""
+            />
+            <p className="cartitemsp">{cartItems[id]}</p>
+            <img
+              onClick={() => addToCart(id)}
+              src={assets.add_icon_green}
+              alt=""
+            />
+          </div>
+        )}
       </div>
       <div className="food-item-info">
         <div className="food-item-name-rating">
@@ -27,8 +40,10 @@ function FoodItem({ id, name, price, description, image , discount }) {
           <img className="ratingstars" src={assets.rating_starts} alt="" />
         </div>
         <p className="food-item-desc">{description}</p>
-        <p className="food-item-price">{price} tk</p>
-        <p className="food-item-dis">{discount}</p>
+        <div className="price">
+          <p className="food-item-price">{price} tk</p>
+          <p className="food-item-dis">{discount}</p>
+        </div>
       </div>
     </div>
   );

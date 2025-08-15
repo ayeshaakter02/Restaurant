@@ -17,15 +17,22 @@ const Header = () => {
         <Typography component="p">
           Where Every Bite Tells a Delicious Story!
         </Typography>
+                <Typography component="p">
+          It is not available for any party/wadding
+        </Typography>
         <Link to="/table-booking">
           <Button variant="contained" type="button">
             Book Table Now
           </Button>
         </Link>
-        <Link className="offer" to="/discount">View Offers</Link>
-        <a href="#explore-menu" className="menu">
-          View Menu
-        </a>
+        <div className="view">
+          <Link className="offer" to="/discount">
+            View Offers
+          </Link>
+          <a href="#explore-menu" className="menu">
+            View Menu
+          </a>
+        </div>
         <Typography component="h6">Open: (8 AM - 12 PM)</Typography>
       </Box>
     </div>

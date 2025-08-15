@@ -47,7 +47,7 @@ export default function NavBar() {
               fontWeight: 800,
             }}
           >
-            Restaurant.
+            Take a break
           </Typography>
           <div>
             <Badge color="warning" variant="dot">

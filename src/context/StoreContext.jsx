@@ -7,8 +7,6 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const url = "http://localhost:4000";
-  // const [token,setToken] = useState("");
-  //  const { IsAuth } = useContext(AuthContext);
   const { token, IsAuth } = useContext(AuthContext);
 
   const addToCart = async (itemId) => {
@@ -37,14 +35,6 @@ const StoreContextProvider = (props) => {
     }
   };
 
-  // const loadCartData = async (token) => {
-  //   const response = await axios.post(
-  //     url + "/api/cart/get",
-  //     {},
-  //     { headers: { token } }
-  //   );
-  //   setCartItems(response.data.cartData);
-  // };
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;

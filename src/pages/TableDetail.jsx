@@ -10,7 +10,6 @@ import Loader from '../components/Loading/Loading';
 const TableDetail = () => {
     // url to getting Table Id
     let { id } = useParams();
-
     const { isLoading, data:table } = useQuery({
         queryKey: ["table-Data"],
         queryFn:()=> TableFilterById(id),

@@ -26,7 +26,12 @@
 .food-item-name-rating img{
     width: 70px;
 }
+.food-item-info .price{
+    display: flex;
+    justify-content: space-between;
+}
 .food-item-dis{
+    margin-top: 15px;
     color: tomato;
 }
 .food-item-desc{

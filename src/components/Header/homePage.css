@@ -15,6 +15,7 @@
 }
 .home .content p{
     color: lightgray;
+    margin-top: 5px;
 }
 .home .content h2{
     font-family: sans-serif;
@@ -37,13 +38,15 @@
     background-color: #e52b34 !important;
     margin-top: 50px;
 }
-
-.home .content a {
+.home .content .view{
     margin-top: 20px;
+}
+.home .content a {
+    margin-left: 30px;
     color: white;
     text-decoration: none;
 }
-.home .content .offer:hover ,a:hover {
+.home .content .offer:hover {
     color: #e52b34;
 }
 .home .content a:hover {

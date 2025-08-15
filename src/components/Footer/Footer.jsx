@@ -20,21 +20,24 @@ const Footer = () => {
               fontWeight: 800,
             }}
           >
-            Restaurant.
+            Take a break
           </Typography>
         </div>
         <div className="footer-content-right">
           <h3>Contact us</h3>
           <ul>
             <li>+1-212-456-7890</li>
-            <li>contact@restaurant.com</li>
+            <li>contact@takeabreak.com</li>
           </ul>
         </div>
       </div>
       <hr />
       <p className="footer-copyright">
         Copyright ©2025 All rights reserved | Developed by{" "}
-        <Link to={"https://www.facebook.com/ar.badhon.71"}>Ayesha</Link>
+        <div><Link to={"https://www.facebook.com/js.etee.9"}>Etee</Link></div>
+        <div><Link to={"https://www.facebook.com/santona.hasan.96"}>Santona</Link></div>
+        <div><Link to={"https://www.facebook.com/tahsin.aktarnisu.9"}>Nishat</Link></div>
+        <div><Link to={"https://www.facebook.com/jamimchumkii"}>Jamim</Link></div>
       </p>
     </div>
   );
