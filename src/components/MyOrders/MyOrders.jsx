@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import { StoreContext } from "../../context/StoreContext";
 
 const MyOrders = () => {
-  const { cartItems, food_list, getTotalCartAmount, url } =
+  const { cartItems, food_list, getTotalCartAmount,getDiscountAmount, url } =
     useContext(StoreContext);
   return (
     <div className="my-orders">
@@ -57,7 +57,10 @@ const MyOrders = () => {
               <div className="order-total-details">
                 <b>Your Total Bill</b>
                 <b>
-                  {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 60} tk
+                  {getTotalCartAmount() === 0
+                  ? 0
+                  : getTotalCartAmount() - getDiscountAmount() + 60}{" "}
+                tk
                 </b>
               </div>
             </div>

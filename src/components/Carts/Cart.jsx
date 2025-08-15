@@ -6,8 +6,14 @@ import { useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url } =
-    useContext(StoreContext);
+  const {
+    cartItems,
+    food_list,
+    removeFromCart,
+    getTotalCartAmount,
+    getDiscountAmount,
+    url,
+  } = useContext(StoreContext);
 
   const navigate = useNavigate();
 
@@ -66,6 +72,11 @@ const Cart = () => {
             </div>
             <hr />
             <div className="cart-total-details">
+              <p>Discount (10%)</p>
+              <p>- {getDiscountAmount()} tk</p>
+            </div>
+            <hr />
+            <div className="cart-total-details">
               <p>Delivery Fee</p>
               <p>{getTotalCartAmount() === 0 ? 0 : 60} tk</p>
             </div>
@@ -73,7 +84,10 @@ const Cart = () => {
             <div className="cart-total-details">
               <b>Total</b>
               <b>
-                {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 60} tk
+                {getTotalCartAmount() === 0
+                  ? 0
+                  : getTotalCartAmount() - getDiscountAmount() + 60}{" "}
+                tk
               </b>
             </div>
           </div>
@@ -86,7 +100,6 @@ const Cart = () => {
             PROCEED TO CHECKOUT
           </button>
         </div>
-        <div className="cart-promocode"></div>
       </div>
     </div>
   );

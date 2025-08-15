@@ -1,40 +1,45 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
-import "./PlaceOrder.css"
+import "./PlaceOrder.css";
 
 const PlaceOrder = () => {
-   const {getTotalCartAmount,token,food_list,cartItems,url} = useContext(StoreContext)
+  const {
+    getTotalCartAmount,
+    token,
+    food_list,
+    cartItems,
+    url,
+    getDiscountAmount,
+  } = useContext(StoreContext);
 
-    const [data,setData] = useState({
-    firstName:"",
-    lastName:"",
-    email:"",
-    street:"",
-    city:"",
-    state:"",
-    zipcode:"",
-    country:"",
-    phone:""
-  })
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    street: "",
+    city: "",
+    state: "",
+    zipcode: "",
+    country: "",
+    phone: "",
+  });
 
   const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setData(data=>({...data,[name]:value}))
-  }
+    setData((data) => ({ ...data, [name]: value }));
+  };
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  useEffect(()=>{
-    if (!token){
-      navigate('/place-order')
+  useEffect(() => {
+    if (!token) {
+      navigate("/place-order");
+    } else if (getTotalCartAmount() === 0) {
+      navigate("/cart");
     }
-    else if(getTotalCartAmount()===0)
-    {
-      navigate('/cart')
-    }
-  },[token])
+  }, [token]);
 
   return (
     <div className="order">
@@ -133,13 +138,23 @@ const PlaceOrder = () => {
               </div>
               <hr />
               <div className="cart-total-details">
+                <p>Discount (10%)</p>
+                <p>- {getDiscountAmount()} tk</p>
+              </div>
+              <hr />
+              <div className="cart-total-details">
                 <p>Delivery Fee</p>
                 <p>{getTotalCartAmount() === 0 ? 0 : 60} tk</p>
               </div>
               <hr />
               <div className="cart-total-details">
                 <b>Total</b>
-                <b>{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 60} tk</b>
+                <b>
+                  {getTotalCartAmount() === 0
+                  ? 0
+                  : getTotalCartAmount() - getDiscountAmount() + 60}{" "}
+                tk
+                </b>
               </div>
             </div>
             <Link className="link" to={"/MyOrders"}>
