@@ -37,14 +37,14 @@ const StoreContextProvider = (props) => {
     }
   };
 
-  const loadCartData = async (token) => {
-    const response = await axios.post(
-      url + "/api/cart/get",
-      {},
-      { headers: { token } }
-    );
-    setCartItems(response.data.cartData);
-  };
+  // const loadCartData = async (token) => {
+  //   const response = await axios.post(
+  //     url + "/api/cart/get",
+  //     {},
+  //     { headers: { token } }
+  //   );
+  //   setCartItems(response.data.cartData);
+  // };
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
@@ -57,9 +57,8 @@ const StoreContextProvider = (props) => {
     return totalAmount;
   };
 
-  // 10% Discount ফাংশন
   const getDiscountAmount = () => {
-    const discountRate = 0.1; // 10% discount
+    const discountRate = 0.1; 
     return getTotalCartAmount() * discountRate;
   };
 
