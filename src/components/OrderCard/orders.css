@@ -18,7 +18,7 @@
     background-image: url(../../assets/images/bg.png);
     background-repeat: no-repeat;
     background-position-y:50px ;
-    background-size:contain;
+    background-size: cover ;
 }
 .orders-container{
     display: flex;
