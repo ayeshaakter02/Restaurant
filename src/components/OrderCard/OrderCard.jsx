@@ -9,7 +9,6 @@ const OrderCard = ({OrderData}) => {
 
   const onSubmit=(id)=>{
     const data={reservation:{},status:"Available"}
-    // console.log(id,data)
     deleteBookingMutation({id,data})
   }
     return (

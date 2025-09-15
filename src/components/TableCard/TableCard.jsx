@@ -4,7 +4,6 @@ import { Button,FormControl,InputLabel,MenuItem,Select,TextField} from '@mui/mat
 import './booking.css'
 import { useNavigate } from 'react-router-dom';
 import { BookingUpdate,  TableData, TableFilterByGuest } from '../../API/Table'
-// import {Authenticate} from '../../Validate/AuthContext'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import Loader from '../Loading/Loading'
 import { toast } from 'react-toastify'
@@ -12,7 +11,6 @@ import { AuthContext } from '../../context/AuthContext';
 import { StoreContext } from '../../context/StoreContext';
 
 const TableCard = () => {
-  // const { IsAuth } = useContext(Authenticate);
   const { IsAuth } = useContext(AuthContext);
   const navigate=useNavigate()
   const {register,handleSubmit, formState:{errors}}=useForm()
@@ -39,12 +37,9 @@ const TableCard = () => {
   });
 
   const onSubmit=(data)=>{
-    //checking authentication
     if(IsAuth){
-      //calling Table Store to update booking
       
       let today = new Date().toISOString().slice(0, 10)
-      // Order ID Generate
       var orderId = "Ak" + Math.random().toString(16).slice(2)
 
       const OrderModel={
@@ -66,7 +61,6 @@ const TableCard = () => {
       navigate('/orders')
     }
     else {
-      //redirect login page
       toast.success("Login Now");
       navigate('/login')
     }
@@ -141,7 +135,6 @@ const TableCard = () => {
           <MenuItem value='3'>3 Person</MenuItem>
           <MenuItem value='4'>4 Person</MenuItem>
           <MenuItem value='5'>5 Person</MenuItem>
-          {/* <MenuItem value='10'>10 Person</MenuItem> */}
         </Select>
         </FormControl>
 

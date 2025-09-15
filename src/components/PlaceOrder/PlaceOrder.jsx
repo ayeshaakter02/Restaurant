@@ -168,8 +168,3 @@ const PlaceOrder = () => {
 };
 
 export default PlaceOrder;
-
-// onChange={onChangeHandler}
-// {getTotalCartAmount()}
-// {getTotalCartAmount() === 0 ? 0 : 2}
-// {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}
