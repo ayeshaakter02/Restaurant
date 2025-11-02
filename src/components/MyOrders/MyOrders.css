@@ -35,7 +35,12 @@
 .order-total hr{
     margin: 10px 0px;
 }
+.delivery{
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 500;
 
+}
 @media (max-width:900px) {
     .my-orders-order{
         grid-template-columns: 1fr 2fr 1fr;

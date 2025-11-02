@@ -64,6 +64,9 @@ const MyOrders = () => {
                 </b>
               </div>
             </div>
+            <div className="delivery">
+              After 1 hour your food is delivery on your home
+            </div>
           </div>
         </div>
       </div>

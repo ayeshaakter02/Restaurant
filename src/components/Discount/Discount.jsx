@@ -91,7 +91,7 @@ const Discount = () => {
               fontWeight: 800,
             }}
           >
-            Weekend Offers for Visitors ! (Satruday-Sunday)
+            Weekend Offers for Visitors ! (Friday-Satruday)
             <br />
             All Items have 20% off
           </Typography>

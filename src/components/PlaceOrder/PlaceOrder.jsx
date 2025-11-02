@@ -18,10 +18,8 @@ const PlaceOrder = () => {
     lastName: "",
     email: "",
     street: "",
-    city: "",
-    state: "",
-    zipcode: "",
-    country: "",
+    Address: "",
+    Area: "",
     phone: "",
   });
 
@@ -85,37 +83,19 @@ const PlaceOrder = () => {
           <div className="multi-fields">
             <input
               required
-              name="city"
-              value={data.city}
+              name="address"
+              value={data.address}
               onChange={onChangeHandler}
               type="text"
-              placeholder="City"
+              placeholder="Address"
             />
             <input
               required
-              name="state"
-              value={data.state}
+              name="area"
+              value={data.area}
               onChange={onChangeHandler}
               type="text"
-              placeholder="State"
-            />
-          </div>
-          <div className="multi-fields">
-            <input
-              required
-              name="zipcode"
-              value={data.zipcode}
-              onChange={onChangeHandler}
-              type="text"
-              placeholder="Zip code"
-            />
-            <input
-              required
-              name="country"
-              value={data.country}
-              onChange={onChangeHandler}
-              type="text"
-              placeholder="Country"
+              placeholder="Area"
             />
           </div>
           <input
