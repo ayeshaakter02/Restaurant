@@ -1,20 +1,48 @@
-.Auth .card{
-    border-radius: 15px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-flow: column;
-    gap:30px;
-    width:400px;
-    padding: 2rem;
-    border:none;
-    margin-left: 50%;
+.Auth .card {
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 30px;
+  width: 400px;
+  padding: 2rem;
+  border: none;
+  margin-left: 50%;
 }
-.Auth input{
-    width: 350px;
+.Auth input {
+  width: 350px;
 }
-.Auth{
-    background-image: url(../assets/images/login.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+.Auth {
+  background-image: url(../assets/images/login.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.form-component form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-component form input,
+.form-component form select,
+.form-component form textarea {
+  font-size: 18px;
+  padding: 10px 10px 10px 20px;
+  border-radius: 20px;
+  border: 1px solid rgb(207, 215, 226);
+
+}
+.form-component button {
+  padding: 10px 35px;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, #107ed8, #1e1ae7);
+}
+.form-component button:hover {
+  background: linear-gradient(to left, #2b88df, #1632d1);
 }

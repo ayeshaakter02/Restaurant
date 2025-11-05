@@ -13,6 +13,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import Discount from "./components/Discount/Discount.jsx";
+import Register from "./Validate/Register.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login/>,
+      },
+      {
+        path: "/register",
+        element: <Register/>,
       },
       {
         path: "/logout",

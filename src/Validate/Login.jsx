@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Box, Button, Card, Container, Modal, TextField, Typography} from '@mui/material'
+import { Box, Button, Card, Container, TextField, Typography} from '@mui/material'
 import {useForm} from "react-hook-form"
 import './auth.css'
 import { Link } from 'react-router-dom'
@@ -20,9 +20,6 @@ const style = {
 
 
 const Login = () => {
-//User Details View
-const [open, setOpen] = React.useState(false);
-
   const navigate=useNavigate()
   const {register,handleSubmit,formState:{errors}}=useForm()
   //auth function
@@ -31,7 +28,7 @@ const [open, setOpen] = React.useState(false);
 
 //form validation
 function FormValidate(e) {
-  if (e.Email === "user@gmail.com") {
+  if (e.Email === "santonaa641@gmail.com" || "nishatnishu2121@gmail.com") {
     if (e.Psw === "1234") {
       //auth change value and page navigate to home screen
       setAuth(true);
@@ -54,32 +51,20 @@ function FormValidate(e) {
       <Card className='card' variant='outlined'>
       <TextField {...register("Email",{required:"Enter Email"})} error={errors.Email?true:false} variant='standard'  label="Enter Email" type='email'/>
       <TextField {...register("Psw",{required:"Enter Password"})} error={errors.Psw?true:false} variant='standard'  label="Enter Password" type='password'/>
-      <Button sx={{alignSelf:'flex-start',marginLeft:3 , color:'gray'}} className="hint-btn" onClick={() => setOpen(true)}>
-          Check Hint{" "}
-        </Button>
+
       <Box sx={{width:"100%",display:'flex',justifyContent:"space-around",alignItems:"center"}}>
       <Link to='/'><Button variant='text'>Cancel</Button></Link>
+      <Link
+            to={"/register"}
+            style={{ textDecoration: "none", alignItems: "center" }}
+          >
+            Register Now
+          </Link>
       <Button variant='contained' type='submit' endIcon={<ArrowForward/>} >Login</Button>
       </Box>
     </Card>
     </form>
     </Box>
-    <Modal
-        open={open}
-        onClose={() => setOpen(false)}
-        aria-labelledby="modal-modal-title"
-      >
-        <Card sx={style}>
-          <Typography id="modal-modal-title" variant="h6">
-            UserName
-          </Typography>
-          <Typography component="p">user@gmail.com</Typography>
-          <Typography id="modal-modal-title" variant="h6" marginTop={5}>
-            Password
-          </Typography>
-          <Typography component="p">1234</Typography>
-        </Card>
-      </Modal>
     </Container>
   )
 }

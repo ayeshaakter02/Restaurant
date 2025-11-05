@@ -34,10 +34,10 @@ const Footer = () => {
       <hr />
       <p className="footer-copyright">
         Copyright ©2025 All rights reserved | Developed by{" "}
-        <div><Link to={"https://www.facebook.com/js.etee.9"}>Etee</Link></div>
-        <div><Link to={"https://www.facebook.com/santona.hasan.96"}>Santona</Link></div>
-        <div><Link to={"https://www.facebook.com/tahsin.aktarnisu.9"}>Nishat</Link></div>
-        <div><Link to={"https://www.facebook.com/jamimchumkii"}>Jamim</Link></div>
+        <Link to={"https://www.facebook.com/js.etee.9"}>Etee</Link>
+        <Link to={"https://www.facebook.com/santona.hasan.96"}>Santona</Link>
+        <Link to={"https://www.facebook.com/tahsin.aktarnisu.9"}>Nishat</Link>
+        <Link to={"https://www.facebook.com/jamimchumkii"}>Jamim</Link>
       </p>
     </div>
   );
