@@ -9,6 +9,8 @@ import Loader from '../Loading/Loading'
 import { toast } from 'react-toastify'
 import { AuthContext } from '../../context/AuthContext';
 import { StoreContext } from '../../context/StoreContext';
+import { db } from '../../firebase';
+import { push, ref } from 'firebase/database';
 
 const TableCard = () => {
   const { IsAuth } = useContext(AuthContext);
@@ -36,7 +38,7 @@ const TableCard = () => {
     },
   });
 
-  const onSubmit=(data)=>{
+  const onSubmit=async(data)=>{
     if(IsAuth){
       
       let today = new Date().toISOString().slice(0, 10)
@@ -56,6 +58,7 @@ const TableCard = () => {
         },
         status:'Booked'
       }
+      await push(ref(db, "tableBookings"), OrderModel);
 
       addbookingMutation({id:data.table,data:OrderModel})
       navigate('/orders')
