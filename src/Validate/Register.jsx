@@ -32,81 +32,85 @@ const Register = () => {
       });
 
       toast.success("Registration successful!");
-      setIsAuthenticated(true);
-      navigateTo("/");
+      navigateTo("/login");
     } catch (error) {
       toast.error(error.message);
       console.error(error);
     }
   };
 
-  // if (isAuthenticated) {
-  //   return <Navigate to={"/"} />;
-  // }
+  if (isAuthenticated) {
+    return <Navigate to={"/login"} />;
+  }
 
   return (
     <Container className="Auth">
       {" "}
       <div className="container form-component">
-        <Typography className='first-title' variant='h6'>Sign up</Typography>
-        <Typography className='second-title' variant='h4'>Discover Our Flavorful Symphony!</Typography>
-        <Box sx={{display:'flex',justifyContent:"center",alignItems:"center",height:550}}>
-          
-    
-    
-    <form onSubmit={handleRegister}>
-      
-      <Card className='card' variant='outlined'>
-      <div>
-            <input
-              type="text"
-              value={userName}
-              placeholder="User Name"
-              onChange={(e) => setUserName(e.target.value)}
-            />
-          </div>
+        <Typography className="first-title" variant="h6">
+          Sign up
+        </Typography>
+        <Typography className="second-title" variant="h4">
+          Discover Our Flavorful Symphony!
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: 550,
+          }}
+        >
+          <form onSubmit={handleRegister}>
+            <Card className="card" variant="outlined">
+              <div>
+                <input
+                  type="text"
+                  value={userName}
+                  placeholder="User Name"
+                  onChange={(e) => setUserName(e.target.value)}
+                />
+              </div>
 
-          <div>
-            <input
-              type="email"
-              value={email}
-              placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+              <div>
+                <input
+                  type="email"
+                  value={email}
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
 
-          <div>
-            <input
-              type="password"
-              value={password}
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+              <div>
+                <input
+                  type="password"
+                  value={password}
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
 
-          <div
-            style={{
-              gap: "10px",
-              justifyContent: "flex-end",
-              flexDirection: "row",
-            }}
-          >
-            <p style={{ marginBottom: 0 }}>Already Registered?</p>
-            <Link
-              to={"/login"}
-              style={{ textDecoration: "none", alignItems: "center" }}
-            >
-              Login Now
-            </Link>
-          </div>
-          <div style={{ justifyContent: "center", alignItems: "center" }}>
-            <button type="submit">Register</button>
-          </div>
-    </Card>
-          
-        </form>
-    </Box>
-
+              <div
+                style={{
+                  gap: "10px",
+                  justifyContent: "flex-end",
+                  flexDirection: "row",
+                }}
+              >
+                <p style={{ marginBottom: 0 }}>Already Registered?</p>
+                <Link
+                  to={"/login"}
+                  style={{ textDecoration: "none", alignItems: "center" }}
+                >
+                  Login Now
+                </Link>
+              </div>
+              <div style={{ justifyContent: "center", alignItems: "center" }}>
+                <button type="submit">Register</button>
+              </div>
+            </Card>
+          </form>
+        </Box>
       </div>
     </Container>
   );

@@ -110,8 +110,8 @@ const TableCard = () => {
           defaultValue=''
           >
             <MenuItem disabled value=''></MenuItem>
-          <MenuItem value='8 AM - 10 AM'>08 AM - 10 AM</MenuItem>
-          <MenuItem value='10 AM - 12 PM'>10 AM - 12 PM</MenuItem>
+          {/* <MenuItem value='8 AM - 10 AM'>08 AM - 10 AM</MenuItem>
+          <MenuItem value='10 AM - 12 PM'>10 AM - 12 PM</MenuItem> */}
           <MenuItem value='12 PM - 2 PM'>12 PM - 02 PM</MenuItem>
           <MenuItem value='2 PM - 4 PM'>02 PM - 04 PM</MenuItem>
           <MenuItem value='4 PM - 6 PM'>04 PM - 06 PM</MenuItem>

@@ -33,7 +33,7 @@ const Header = () => {
             View Menu
           </a>
         </div>
-        <Typography component="h6">Open: (8 AM - 12 PM)</Typography>
+        <Typography component="h6">Open: (11 AM - 12 AM)</Typography>
       </Box>
     </div>
   );

@@ -3,7 +3,7 @@ import logo from "./logo.png";
 import header_img from "./header_img.png";
 import search_icon from "./search_icon.png";
 import menu_1 from "./menu_1.png";
-import menu_2 from "./menu_2.png";
+import menu_2 from "./menu_2.jpg";
 import menu_3 from "./menu_3.png";
 import menu_4 from "./menu_4.png";
 import menu_5 from "./menu_5.png";
@@ -20,7 +20,7 @@ import food_6 from "./food_6.png";
 import food_7 from "./food_7.png";
 import food_8 from "./food_8.png";
 import food_9 from "./food_9.png";
-import food_10 from "./food_10.jpg";
+import food_10 from "./food_10.png";
 import food_11 from "./food_11.png";
 import food_12 from "./food_12.png";
 import food_13 from "./food_13.png";
@@ -96,7 +96,7 @@ export const menu_list = [
     menu_image: menu_1,
   },
   {
-    menu_name: "Rolls",
+    menu_name: "Drinks",
     menu_image: menu_2,
   },
   {
@@ -130,7 +130,7 @@ export const food_list = [
     _id: "1",
     name: "Greek salad",
     image: food_1,
-    price: 249,
+    price: 149,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -140,7 +140,7 @@ export const food_list = [
     _id: "2",
     name: "Veg salad",
     image: food_2,
-    price: 220,
+    price: 120,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -150,7 +150,7 @@ export const food_list = [
     _id: "3",
     name: "Clover Salad",
     image: food_3,
-    price: 289,
+    price: 189,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -160,7 +160,7 @@ export const food_list = [
     _id: "4",
     name: "Chicken Salad",
     image: food_4,
-    price: 349,
+    price: 149,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -170,7 +170,7 @@ export const food_list = [
     _id: "5",
     name: "Broccoli Salad",
     image: food_5,
-    price: 269,
+    price: 169,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -178,59 +178,59 @@ export const food_list = [
   },
   {
     _id: "6",
-    name: "Lasagna Rolls",
+    name: "Fresh Blueberry Drinks",
     image: food_6,
-    price: 315,
+    price: 120,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
+    category: "Drinks",
   },
   {
     _id: "7",
-    name: "Peri Peri Rolls",
+    name: "Casa Blanca Cocktail",
     image: food_7,
-    price: 295,
+    price: 80,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
+    category: "Drinks",
   },
   {
     _id: "8",
-    name: "Chicken Rolls",
+    name: "Blue Ocean Drink",
     image: food_8,
-    price: 329,
+    price: 100,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
+    category: "Drinks",
   },
   {
     _id: "9",
-    name: "Veg Rolls",
+    name: "ButterFly Pea Lemonade",
     image: food_9,
-    price: 199,
+    price: 60,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
+    category: "Drinks",
   },
   {
     _id: "10",
-    name: "Beef Rolls",
+    name: "Orange Screwdriver",
     image: food_10,
-    price: 349,
+    price: 75,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
+    category: "Drinks",
   },
   {
     _id: "11",
     name: "Ripple Ice Cream",
     image: food_11,
-    price: 255,
+    price: 155,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -240,7 +240,7 @@ export const food_list = [
     _id: "12",
     name: "Fruit Ice Cream",
     image: food_12,
-    price: 189,
+    price: 129,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -250,7 +250,7 @@ export const food_list = [
     _id: "13",
     name: "Jar Ice Cream",
     image: food_13,
-    price: 249,
+    price: 149,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -260,7 +260,7 @@ export const food_list = [
     _id: "14",
     name: "Vanilla Ice Cream",
     image: food_14,
-    price: 165,
+    price: 100,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -381,7 +381,7 @@ export const food_list = [
     _id: "26",
     name: "Garlic Mushroom Rice",
     image: food_26,
-    price: 350,
+    price: 250,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -391,7 +391,7 @@ export const food_list = [
     _id: "27",
     name: "Fried Cauliflower Rice",
     image: food_27,
-    price: 299,
+    price: 249,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -401,7 +401,7 @@ export const food_list = [
     _id: "28",
     name: "Mix Veg Pulao",
     image: food_28,
-    price: 289,
+    price: 259,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -461,7 +461,7 @@ export const food_list = [
     _id: "34",
     name: "Chicken Pasta",
     image: food_34,
-    price: 369,
+    price: 269,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -471,7 +471,7 @@ export const food_list = [
     _id: "35",
     name: "Fettuccine Pasta",
     image: food_35,
-    price: 399,
+    price: 349,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -481,7 +481,7 @@ export const food_list = [
     _id: "36",
     name: "Buttter Noodles",
     image: food_36,
-    price: 325,
+    price: 299,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",
@@ -521,7 +521,7 @@ export const food_list = [
     _id: "40",
     name: "Dan Dan Noodles",
     image: food_40,
-    price: 325,
+    price: 285,
     discount: "10% off",
     description:
       "Food provides essential nutrients for overall health and well-being",

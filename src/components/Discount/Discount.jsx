@@ -37,12 +37,11 @@ const Discount = () => {
             <div className="image">
               <img src={Image1} alt="Family" />
             </div>
-            
 
             <Carousel.Caption>
               <div className="caption">
-                <h6>Family Combo Offer 1</h6>
-                <p>2999 TK</p>
+                <h6>Family Combo Offer 1 (8 person )</h6>
+                <p>1599 TK</p>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
@@ -50,12 +49,11 @@ const Discount = () => {
             <div className="image">
               <img src={Image2} alt="Family" />
             </div>
-            
 
             <Carousel.Caption>
               <div className="caption">
-                <h6>Family Combo Offer 2</h6>
-                <p>2599 Tk</p>
+                <h6>Family Combo Offer 2 (6 person)</h6>
+                <p>1299 Tk</p>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
@@ -63,12 +61,11 @@ const Discount = () => {
             <div className="image">
               <img src={Image3} alt="Family" />
             </div>
-            
 
             <Carousel.Caption>
               <div className="caption">
-                <h6>Family Combo Offer 3</h6>
-                <p>2299 Tk</p>
+                <h6>Family Combo Offer 3 (4 person)</h6>
+                <p>999 Tk</p>
               </div>
             </Carousel.Caption>
           </Carousel.Item>

@@ -5,7 +5,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 80%;
-    background-position-y: 100px;
+    background-position-y: 180px;
+    background-position-x: 500px;
     padding:50px;
 }
 

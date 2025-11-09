@@ -5,7 +5,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position:80%;
-    background-position-y: 100px;
+    background-position-y: 120px;
+    background-position-x: 300px;
     padding: 20px; 
 }
 .table-detail-card{

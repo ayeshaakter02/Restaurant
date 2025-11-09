@@ -3,7 +3,6 @@ import { createContext } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase.js";
 
-
 //authcontext init
 export const Authenticate = createContext();
 
@@ -13,8 +12,8 @@ export const Context = createContext({
   user: null,
 });
 export const AppWrapper = () => {
-   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState(null); 
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -27,7 +26,7 @@ export const AppWrapper = () => {
       }
     });
 
-    return () => unsubscribe(); 
+    return () => unsubscribe();
   }, []);
 
   return (
@@ -38,7 +37,7 @@ export const AppWrapper = () => {
     </Context.Provider>
   );
 };
-// end context 
+// end context
 
 const AuthContext = ({ children }) => {
   //auth data default false
