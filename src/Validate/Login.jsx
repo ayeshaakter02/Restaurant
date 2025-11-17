@@ -37,7 +37,7 @@ const Login = () => {
 
   //form validation
   function FormValidate(e) {
-    if (e.Email === "santonaa641@gmail.com" || "nishatnishu2121@gmail.com") {
+    if (e.Email === "santonaa641@gmail.com" || "nishatnishu2121@gmail.com" || "kimbora644@gmail.com" || "etee.shuvechha@gmail.com") {
       if (e.Psw === "1234") {
         //auth change value and page navigate to home screen
         setAuth(true);
