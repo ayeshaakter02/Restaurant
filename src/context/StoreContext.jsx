@@ -30,34 +30,23 @@ const StoreContextProvider = (props) => {
 
 
   const addToCart = async (itemId) => {
-    const uid = auth.currentUser?.uid;
-    if (!uid) return alert("Please log in to add items to cart.");
-
-    const newCount = (cartItems[itemId] || 0) + 1;
-    const updatedCart = { ...cartItems, [itemId]: newCount };
-    setCartItems(updatedCart);
-
-    await update(ref(db, `carts/${uid}`), { [itemId]: newCount });
-  };
-
-
-  const removeFromCart = async (itemId) => {
-    const uid = auth.currentUser?.uid;
-    if (!uid) return alert("Please log in to manage your cart.");
-
-    const newCount = (cartItems[itemId] || 0) - 1;
-    let updatedCart = { ...cartItems };
-
-    if (newCount <= 0) {
-      delete updatedCart[itemId];
-      await remove(ref(db, `carts/${uid}/${itemId}`));
-    } else {
-      updatedCart[itemId] = newCount;
-      await update(ref(db, `carts/${uid}`), { [itemId]: newCount });
+        if (!cartItems[itemId]) {
+            setCartItems((prev) => ({ ...prev, [itemId]: 1 }))
+        }
+        else {
+            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
+        }
+        if (token){
+            await axios.post(url+"/api/cart/add",{itemId},{headers:{token}})
+        }
     }
 
-    setCartItems(updatedCart);
-  };
+    const removeFromCart = async (itemId) => {
+        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+        if (token) {
+            await axios.post(url+"/api/cart/remove",{itemId},{headers:{token}})
+        }
+    }
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;

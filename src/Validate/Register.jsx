@@ -1,27 +1,25 @@
-import React, { useContext, useState } from "react";
-import { Context } from "./AuthContext";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { auth, db } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { ref, set } from "firebase/database";
 import { Box, Card, Container, Typography } from "@mui/material";
-
+import "./auth.css";
 const Register = () => {
-  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigateTo = useNavigate();
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
+
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
       );
 
       const user = userCredential.user;
@@ -31,17 +29,12 @@ const Register = () => {
         email,
       });
 
-      toast.success("Registration successful!");
-      navigateTo("/login");
+      toast.success("Registration Successful!");
+      navigate("/login");
     } catch (error) {
       toast.error(error.message);
-      console.error(error);
     }
   };
-
-  if (isAuthenticated) {
-    return <Navigate to={"/login"} />;
-  }
 
   return (
     <Container className="Auth">

@@ -8,48 +8,34 @@ import {
   Typography,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
-import "./auth.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowForward } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 270,
-  bgcolor: "white",
-  boxShadow: 24,
-  p: 4,
-};
-
+import "./auth.css";
 const Login = () => {
   const navigate = useNavigate();
+  const { setAuth } = useContext(AuthContext);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  //auth function
-  const { setAuth } = useContext(AuthContext);
 
-  //form validation
-  function FormValidate(e) {
-    if (e.Email === "santonaa641@gmail.com" || "nishatnishu2121@gmail.com" || "kimbora644@gmail.com" || "etee.shuvechha@gmail.com") {
-      if (e.Psw === "123456") {
-        //auth change value and page navigate to home screen
-        setAuth(true);
-        toast.success("Login Successfully!");
-        navigate("/");
-      } else {
-        toast.error("Invalid Password");
-      }
-    } else {
-      toast.error("Invalid UserName");
+  const FormValidate = async (data) => {
+    try {
+      await signInWithEmailAndPassword(auth, data.Email, data.Psw);
+
+      setAuth(true);
+      toast.success("Login Successfully!");
+      navigate("/");
+    } catch (error) {
+      toast.error("Invalid Email or Password");
     }
-  }
+  };
 
   return (
     <Container className="Auth">
@@ -59,6 +45,7 @@ const Login = () => {
       <Typography className="second-title" variant="h4">
         Discover Our Flavorful Symphony!
       </Typography>
+
       <Box
         sx={{
           display: "flex",
@@ -67,40 +54,34 @@ const Login = () => {
           height: 550,
         }}
       >
-        <form action="" method="post" onSubmit={handleSubmit(FormValidate)}>
+        <form onSubmit={handleSubmit(FormValidate)}>
           <Card className="card" variant="outlined">
             <TextField
-              {...register("Email", { required: "Enter Email" })}
-              error={errors.Email ? true : false}
+              {...register("Email", { required: "Email Required" })}
+              error={!!errors.Email}
               variant="standard"
-              label="Enter Email"
+              label="Email"
               type="email"
             />
+
             <TextField
-              {...register("Psw", { required: "Enter Password" })}
-              error={errors.Psw ? true : false}
+              {...register("Psw", { required: "Password Required" })}
+              error={!!errors.Psw}
               variant="standard"
-              label="Enter Password"
+              label="Password"
               type="password"
             />
 
             <Box
               sx={{
-                width: "100%",
                 display: "flex",
-                justifyContent: "space-around",
+                justifyContent: "space-between",
                 alignItems: "center",
+                gap: "20px",
               }}
             >
-              <Link to="/">
-                <Button variant="text">Cancel</Button>
-              </Link>
-              <Link
-                to={"/register"}
-                style={{ textDecoration: "none", alignItems: "center" }}
-              >
-                Register Now
-              </Link>
+              <Link to="/register">Register Now</Link>
+
               <Button
                 variant="contained"
                 type="submit"
